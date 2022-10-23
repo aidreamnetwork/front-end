@@ -50,7 +50,6 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="navbar-links_container">
-          <input type="text" placeholder="Search Item Here" autoFocus={true} />
           <Menu />
         </div>
       </div>
@@ -77,35 +76,7 @@ const Navbar = () => {
               <Menu />
             </div>
             <div className="navbar-menu_container-links-sign">
-              {user ? (
-                <>
-                  <Link to="/create">
-                    <button type="button" className="primary-btn">
-                      Create
-                    </button>
-                  </Link>
-                  <button type="button" className="secondary-btn">
-                    Connect
-                  </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login">
-                    <button
-                      type="button"
-                      className="primary-btn"
-                      onClick={handleLogin}
-                    >
-                      Sign In
-                    </button>
-                  </Link>
-                  <Link to="/register">
-                    <button type="button" className="secondary-btn">
-                      Sign Up
-                    </button>
-                  </Link>
-                </>
-              )}
+            <ConnectButton />
             </div>
           </div>
         )}

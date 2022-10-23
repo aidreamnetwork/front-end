@@ -9,8 +9,10 @@ import { Link } from "react-router-dom";
 import ListBid from "./ListBid";
 import ListTask from "./ListTask";
 import ListBidNFT from "./ListBidNFT";
+import { useAccount } from "wagmi";
 
 const Header = () => {
+  const { address, isConnected } = useAccount();
 
   var settings = {
     dots: false,
@@ -78,62 +80,24 @@ const Header = () => {
           <img className="shake-vertical" src={handdraw} alt="" />
         </div>
       </div>
-      <div className="header-slider">
-        <h1>Last 10 NFTs</h1>
-          <ListBidNFT number="10" />
-      </div>
-      <div className="header-slider">
-        <h1>Last 10 Results</h1>
-          <ListBid number="10" />
-      </div>
-      <div className="header-slider">
-        <h1>Last 10 Prompts</h1>
-          <ListTask number="10" />
-      </div>
-      {/* <div className="header-slider">
-        <h1>Top Creators</h1>
-        <Slider {...settings} className="slider">
-          {creators.map((creator, index) => (
-            <div className="slider-card" key={index}>
-              <p className="slider-card-number">{index + 1}</p>
-              <div className="slider-img">
-                <img src={seller1} alt="" />
-                <img src={verify} className="verify" alt="" />
-              </div>
-              <Link to={`/miner/` + creator.address}>
-                <p className="slider-card-name">{creator.name}</p>
-              </Link>
-              <p className="slider-card-price">
-                {creator.totalart} <span> NFTs</span>
-              </p>
-            </div>
-          ))}
-        </Slider>
-      </div>
-      <div className="header-slider">
-        <h1>Top Miners</h1>
-        <Slider
-          {...settings}
-          {...{ autoplaySpeed: 1000, slidesToScroll: -1 }}
-          className="slider"
-        >
-          {miners.map((miner, index) => (
-            <div className="slider-card" key={index}>
-              <p className="slider-card-number">{index + 1}</p>
-              <div className="slider-img">
-                <img src={seller1} alt="" />
-                <img src={verify} className="verify" alt="" />
-              </div>
-              <Link to={`/miner/` + miner.address}>
-                <p className="slider-card-name">{miner.name}</p>
-              </Link>
-              <p className="slider-card-price">
-                {miner.reward} <span> KLAY</span>
-              </p>
-            </div>
-          ))}
-        </Slider>
-      </div> */}
+      {isConnected ? (
+        <>
+          <div className="header-slider">
+            <h1>Last 10 NFTs</h1>
+            <ListBidNFT number="10" />
+          </div>
+          <div className="header-slider">
+            <h1>Last 10 Results</h1>
+            <ListBid number="10" />
+          </div>
+          <div className="header-slider">
+            <h1>Last 10 Prompts</h1>
+            <ListTask number="10" />
+          </div>
+        </>
+      ) : (
+        <div className="wallet-warning">Please connect wallet to using app</div>
+      )}
     </div>
   );
 };

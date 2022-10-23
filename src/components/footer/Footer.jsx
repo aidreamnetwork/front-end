@@ -17,8 +17,7 @@ const Footer = () => {
           <h3>Get the lastes Updates</h3>
         </div>
         <div>
-          <input type="text" placeholder='Your Email' />
-          <button>Email Me!</button>
+          <button><a href="mailto:redpanthercode@gmail.com">Email Me!</a></button>
         </div>
         </div>
         <div className="footer-links_div">

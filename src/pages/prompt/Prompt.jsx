@@ -59,7 +59,6 @@ const Prompt = () => {
             <textarea
               type="text"
               rows={2}
-              maxLength="255"
               placeholder="Decription of your item"
               onChange={(e) => setPrompt(e.target.value)}
               required

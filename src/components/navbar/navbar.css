@@ -87,6 +87,9 @@
   height: 35px;
   padding: 5px;
 }
+.navbar-menu_container-links button > p{
+  margin: 0 0 !important;
+}
 .navbar-menu{
   margin-left: 1rem;
   display: none;

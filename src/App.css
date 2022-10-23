@@ -1,6 +1,7 @@
 body{
   background: var(--color-bg);
   scroll-behavior: smooth;
+  font-family: var(--font-family);
 }
 a{
   text-decoration: none;
