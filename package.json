@@ -27,7 +27,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "GENERATE_SOURCEMAP=false react-scripts build",
+    "surge": "mv ./build/index.html ./build/200.html && surge ./build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

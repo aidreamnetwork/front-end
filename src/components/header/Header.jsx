@@ -3,33 +3,15 @@ import "./header.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import seller1 from "../../assets/seller1.jpg";
-import seller2 from "../../assets/seller2.png";
-import seller3 from "../../assets/seller3.png";
-import seller4 from "../../assets/seller4.png";
-import seller5 from "../../assets/seller5.png";
-import seller6 from "../../assets/seller6.jpg";
-import verify from "../../assets/verify.png";
+
 import handdraw from "../../assets/Saly-25.png";
 import { Link } from "react-router-dom";
 import ListBid from "./ListBid";
-const creators = [
-  { name: "Greeker", address: "0x304...0394", totalart: 20 },
-  { name: "Greeker", address: "0x304...0394", totalart: 20 },
-  { name: "Greeker", address: "0x304...0394", totalart: 20 },
-  { name: "Greeker", address: "0x304...0394", totalart: 20 },
-  { name: "Greeker", address: "0x304...0394", totalart: 20 },
-  { name: "Greeker", address: "0x304...0394", totalart: 20 },
-];
-const miners = [
-  { name: "SD Hero", address: "0x304...0394", reward: 100 },
-  { name: "SD Hero", address: "0x304...0394", reward: 100 },
-  { name: "SD Hero", address: "0x304...0394", reward: 100 },
-  { name: "SD Hero", address: "0x304...0394", reward: 100 },
-  { name: "SD Hero", address: "0x304...0394", reward: 100 },
-  { name: "SD Hero", address: "0x304...0394", reward: 100 },
-];
+import ListTask from "./ListTask";
+import ListBidNFT from "./ListBidNFT";
+
 const Header = () => {
+
   var settings = {
     dots: false,
     infinite: true,
@@ -97,8 +79,16 @@ const Header = () => {
         </div>
       </div>
       <div className="header-slider">
+        <h1>Last 10 NFTs</h1>
+          <ListBidNFT number="10" />
+      </div>
+      <div className="header-slider">
         <h1>Last 10 Results</h1>
-          <ListBid from="1" to="10" />
+          <ListBid number="10" />
+      </div>
+      <div className="header-slider">
+        <h1>Last 10 Prompts</h1>
+          <ListTask number="10" />
       </div>
       {/* <div className="header-slider">
         <h1>Top Creators</h1>

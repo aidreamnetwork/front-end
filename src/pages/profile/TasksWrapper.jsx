@@ -14,6 +14,6 @@ export default function TasksWrapper({creator}) {
     0,
     totalUserTaskCount?.toNumber() - 1
   );
-  const taskIdsToNumber = taskIds.map(taskId=>taskId.toNumber());
-  return <Tasks taskIds={taskIds} />;
+  const taskIdsToNumber = taskIds?.map(taskId=>taskId.toNumber());
+  return <Tasks taskIds={taskIdsToNumber} />;
 }

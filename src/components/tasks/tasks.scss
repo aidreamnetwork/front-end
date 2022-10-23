@@ -19,20 +19,24 @@
       }
 }
 .task-readonly {
-    max-width: 1200px;
-    margin: 0 auto;
-    &-button{
-        margin-left: 10px;
-        font-weight: 600;
-        border: 1px solid #fff;
-        border-radius: 20px;
-        padding: 0px 10px; 
-        transition: 0.1s all ease;
-        cursor: pointer;
-        &:hover{
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    max-width: 1400px;
+    margin: 10px auto;
+    &-buttons{
+        display: flex;
+        &-button{
+            margin-left: 10px;
+            font-weight: 600;
+            border: 1px solid #fff;
+            border-radius: 20px;
+            padding: 0px 10px; 
+            transition: 0.1s all ease;
+            cursor: pointer;
+            &:hover{
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            }
         }
     }
+    
     &-prompt {
         border: 1px solid #ffffff11;
         background-color: #ffffff11;
@@ -47,10 +51,10 @@
       padding: 5px 10px 20px 50px;
       display: flex;
       flex-direction: column;
-      transition: all ease 0.5s;
+      transition: all ease 0.1s;
       position: relative;
       &:hover{
-          transform: translateY(-10px);
+          transform: translateX(-10px);
       }
       &-title {
         color: whitesmoke;
@@ -63,8 +67,9 @@
         background: var(--primary-btn);
         margin: 20px 0;
         padding: 20px;
-        border: 1px solid;
+        border: 1px solid #ffffff11;
         border-radius: 25px;
+        color: black;
         &:hover{
             box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 
@@ -76,13 +81,16 @@
         flex-wrap: wrap;
         justify-content: center;
         width: 100%;
-        color: white;
+        color: #ffffff88;
+        font-size: small;
         > div {
           margin-left: 10px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+            margin-bottom: 10px;
         }
+        
       }
     }
     &-result {

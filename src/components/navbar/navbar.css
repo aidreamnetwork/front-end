@@ -54,7 +54,7 @@
   color: #fff;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 25px;
   text-transform: capitalize;
   margin: 0 1rem;
@@ -76,14 +76,16 @@
   border-radius: 10px;
 }
 
+.navbar-links_container button,
 .navbar-sign button,
 .navbar-menu_container button{
   color: #fff;
-  padding: 0.5rem 1rem;
   font-family: var(--font-family);
   font-weight: 500;
   border: none;
-  font-size: 16px;
+  font-size: 14px;
+  height: 35px;
+  padding: 5px;
 }
 .navbar-menu{
   margin-left: 1rem;

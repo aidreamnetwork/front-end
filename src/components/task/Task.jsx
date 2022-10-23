@@ -57,7 +57,7 @@ const Task = ({ taskId }) => {
     results,
     resolveTimes,
     tokenId,
-  } = data?.[0];
+  } = data;
   let startTime = new Date(taskData?.promptTime?.toNumber() * 1000);
   // let pickable = new Date() - startTime < TTL_TASK * 1000;
   let endTime = new Date(

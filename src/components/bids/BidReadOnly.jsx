@@ -62,7 +62,7 @@ const BidReadOnly = ({ resultId }) => {
                 <span>ID: </span> <span>{resultId}</span>
               </p>
               <p className="bids-title">
-              <span>TaskId: </span> <span>{data?.taskId?.toNumber()}</span>
+              <span>TaskId: </span> <span>{data?.taskId?.toNumber()} - </span>
               <span>NFT: </span> <span>[{data?.tokenId?.toNumber()}]</span>
               </p>
             </Link>

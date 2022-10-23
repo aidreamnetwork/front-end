@@ -44,7 +44,7 @@ const TaskReadOnly = ({ taskId }) => {
     results,
     resolveTimes,
     tokenId,
-  } = data?.[0];
+  } = data;
   let startTime = new Date(taskData?.promptTime?.toNumber() * 1000);
   // let pickable = new Date() - startTime < TTL_TASK * 1000;
   let endTime = new Date(
@@ -83,29 +83,39 @@ const TaskReadOnly = ({ taskId }) => {
               <div>
                 <b>Total result</b> {resultCount.toNumber()}/4
               </div>
-              <div className="task-readonly-button" onClick={()=>setshowResult(!showResult)}>{showResult?'Hide':'Show'} results</div>
-              <div className="task-readonly-button" onClick={()=>nagivate('/task/'+taskId)}>View task</div>
-            </div>
-            {showResult? <div className="task-readonly-prompt-footer">
-              <div className="task-readonly-result">
-                {Array.from({ length: 4 }, (e, i) => {
-                  if (i < resultCount.toNumber()) {
-                    return (
-                      <BidReadOnly
-                        key={i}
-                        resultId={resultIds[i].toNumber()}
-                      />
-                    );
-                  } else {
-                    return (
-                      <BidReadOnly
-                        key={i}
-                      />
-                    );
-                  }
-                })}
+              <div className="task-readonly-buttons">
+                <div
+                  className="task-readonly-buttons-button"
+                  onClick={() => setshowResult(!showResult)}
+                >
+                  {showResult ? "Hide" : "Show"} results
+                </div>
+                <div
+                  className="task-readonly-buttons-button"
+                  onClick={() => nagivate("/task/" + taskId)}
+                >
+                  View task
+                </div>
               </div>
-            </div>:null}
+            </div>
+            {showResult ? (
+              <div className="task-readonly-prompt-footer">
+                <div className="task-readonly-result">
+                  {Array.from({ length: 4 }, (e, i) => {
+                    if (i < resultCount.toNumber()) {
+                      return (
+                        <BidReadOnly
+                          key={i}
+                          resultId={resultIds[i].toNumber()}
+                        />
+                      );
+                    } else {
+                      return <BidReadOnly key={i} />;
+                    }
+                  })}
+                </div>
+              </div>
+            ) : null}
           </div>
         </>
       )}

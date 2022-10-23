@@ -14,6 +14,6 @@ export default function BidsWrapper({miner}) {
     0,
     totalMinerResultCount?.toNumber() - 1
   );
-  const resultIdsToNumber = resultIds.map(resultId=>resultId.toNumber());
+  const resultIdsToNumber = resultIds?.map(resultId=>resultId.toNumber());
   return <Bids resultIds={resultIdsToNumber} />;
 }

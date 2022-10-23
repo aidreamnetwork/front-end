@@ -4,9 +4,12 @@ import useADNCall from "../../useContract/useADNCall";
 import useANDCallArray from "../../useContract/useADNCallArray";
 import BidReadOnly from "../bids/BidReadOnly";
 
-export default function ListBid({ from, to }) {
+export default function ListBid({ number }) {
+  const { data: total  } = useADNCall("resultCount");
   var resultIds = [];
-  for (var i = from; i <= to; i++) {
+  let to = total?.toNumber();
+  let from = to - number;
+  for (var i = to; i > from; i--) {
     resultIds.push(i);
   }
   return (

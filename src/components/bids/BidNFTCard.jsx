@@ -6,22 +6,30 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import getResultFullData from "../../useContract/getResultFullData";
 import { getIPFSLink } from "../../utils";
+import useANDCall from "../../useContract/useADNCall";
+import { ADNNFT, BLOCK_EXPLORER } from "../../config";
 
-const BidNFTCard = ({ resultId }) => {
-  console.log(resultId);
-  const { data, isError, isLoading } = getResultFullData(resultId);
-  console.log(data);
+const BidNFTCard = ({ tokenId }) => {
   const [isPicked, setIsPicked] = useState();
   const [img, setImg] = useState();
+
+  const {
+    data: resultIdBig,
+    isError: isErrorNFT,
+    isLoading: isLoadingNFT,
+  } = useANDCall("NFTToResult", [tokenId]);
+  const [resultId, setresultId] = useState(resultIdBig?.toNumber());
+  const { data, isError, isLoading } = getResultFullData(resultId);
+  console.log(data);
   useEffect(() => {
     if (data) {
       setIsPicked(data.taskData.resultPicked.toNumber() == resultId);
       setImg(getIPFSLink(data.resultData.result));
     }
-  }, [data]);
+  }, [data, resultId]);
   return (
     <div className="card-column">
-      {isLoading || isError ? (
+      {isLoading || isError || isLoadingNFT || isErrorNFT ? (
         <div className="bids-card">
           <div className="bids-card-top">
             <div className="none-img">Loading...</div>
@@ -54,29 +62,25 @@ const BidNFTCard = ({ resultId }) => {
               <img src={img} className="img" />
 
               <div className="img-prompt">
-                <span>Prompt:</span><span> "{data?.taskData?.prompt}"</span>
+                <span>Prompt:</span>
+                <span> "{data?.taskData?.prompt}"</span>
               </div>
             </div>
-            <Link to={`/task/${data?.taskId?.toNumber()}`}>
+            <a href={`${BLOCK_EXPLORER}nft/${ADNNFT}/${data?.tokenId?.toNumber()}`} target="_blank">
               <p className="bids-title">
-                <span>ID: </span> <span>{resultId}</span>
+                <span>Token ID: </span> <span>{data?.tokenId?.toNumber()}</span>
               </p>
-              <p className="bids-title">
-              <span>TaskId: </span> <span>{data?.taskId?.toNumber()}</span>
-              <span>NFT: </span> <span>[{data?.tokenId?.toNumber()}]</span>
-              </p>
-            </Link>
+            </a>
           </div>
           <div className="bids-card-bottom">
             <div>
-              <p>
-                <span>Time: </span>
-                <span>
-                  {new Date(
-                    data?.resultData?.resolveTime?.toNumber() * 1000
-                  ).toLocaleString()}
-                </span>
-              </p>
+              <Link to={`/task/${data?.taskId?.toNumber()}`}>
+                <p>
+                  <span>Task Id: </span>{" "}
+                  <span>{data?.taskId?.toNumber()} - </span>
+                  <span>Result Id: </span> <span>{resultId}</span>
+                </p>
+              </Link>
             </div>
           </div>
         </div>

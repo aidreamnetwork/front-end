@@ -1,4 +1,4 @@
-import { useContractReads } from "wagmi";
+import { useContractRead } from "wagmi";
 
 import ADNHelper from "./ADNHelper";
 
@@ -9,7 +9,7 @@ function getTaskFullData(taskId) {
     args: [taskId],
   }
 
-  const { data, isError, isLoading } = useContractReads({contracts:[getTaskById]});
+  const { data, isError, isLoading } = useContractRead(getTaskById);
   
   return { data, isError, isLoading };
 }
