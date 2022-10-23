@@ -1,0 +1,94 @@
+
+.tasks{
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 90%;
+    
+        &-text h1 {
+          font-family: var(--font-family);
+          font-weight: 600;
+          font-size: 28px;
+          line-height: 42px;
+          color: #ffffff;
+          margin-bottom: 1rem;
+        }
+      }
+}
+.task-readonly {
+    max-width: 1200px;
+    margin: 0 auto;
+    &-button{
+        margin-left: 10px;
+        font-weight: 600;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        padding: 0px 10px; 
+        transition: 0.1s all ease;
+        cursor: pointer;
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+    }
+    &-prompt {
+        border: 1px solid #ffffff11;
+        background-color: #ffffff11;
+      font-family: var(--font-family);
+      height: auto;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 0;
+      padding: 5px 10px 20px 50px;
+      display: flex;
+      flex-direction: column;
+      transition: all ease 0.5s;
+      position: relative;
+      &:hover{
+          transform: translateY(-10px);
+      }
+      &-title {
+        color: whitesmoke;
+        position:absolute;
+        transform: rotate(-90deg);
+        left: 0px;
+        margin-left: -40px;
+      }
+      &-content {
+        background: var(--primary-btn);
+        margin: 20px 0;
+        padding: 20px;
+        border: 1px solid;
+        border-radius: 25px;
+        &:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+        }
+      }
+  
+      &-footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        color: white;
+        > div {
+          margin-left: 10px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+    &-result {
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }

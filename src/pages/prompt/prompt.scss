@@ -1,0 +1,111 @@
+.dream-alert{
+  display: flex;
+  padding: 10px;
+}
+.dream{
+  display: flex;
+  font-family: var(--font-family);
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.dream-container h1{
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 42px;
+  margin-bottom: 40px;
+}
+
+.formGroup{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.formGroup label{
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+.formGroup input{
+  background: #2D2E36;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  line-height: 26px;
+  width: 100%;
+}
+
+.formGroup textarea{
+  font-family: inherit;
+  background: #2D2E36;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  line-height: 26px;
+}
+.formGroup select{
+  background: #2D2E36;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  line-height: 26px;
+  text-overflow: ellipsis;
+}
+
+.twoForm{
+  display: flex;
+  justify-content: space-between;
+}
+.twoForm input {
+  width: 100%;
+  margin-right: 15px;
+}
+
+.dreamForm button{
+  background: var(--primary-btn);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 21px;
+  width: 100%;
+}
+@media screen and (max-width: 550px){
+  .dream{
+    padding:2rem 1.5rem !important;
+
+  }
+  .dream-container h1{
+    display: none;
+    margin-bottom: 20px;
+  }
+  .formGroup{
+    min-width: none;
+  }
+
+}
+@media screen and (min-width: 550px){
+  .dream{
+    padding:2rem 1.5rem !important;
+
+  }
+  .dream-container h1{
+    display: none;
+    margin-bottom: 20px;
+  }
+  .formGroup{
+    min-width: 500px;
+  }
+}

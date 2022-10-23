@@ -1,0 +1,304 @@
+[
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "_ADN",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "constructor"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "resultId",
+                "type": "uint256"
+            }
+        ],
+        "name": "Results",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "resolveTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "result",
+                        "type": "string"
+                    }
+                ],
+                "internalType": "struct ResultData",
+                "name": "resultData",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "taskId",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256",
+                "name": "index",
+                "type": "uint256"
+            }
+        ],
+        "name": "TaskToResults",
+        "outputs": [
+            {
+                "internalType": "uint256",
+                "name": "",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "taskId",
+                "type": "uint256"
+            }
+        ],
+        "name": "Tasks",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "prompt",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "promptTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reward",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "confirmTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "resultPicked",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct TaskData",
+                "name": "taskData",
+                "type": "tuple"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "resultId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getResultFullData",
+        "outputs": [
+            {
+                "components": [
+                    {
+                        "internalType": "uint256",
+                        "name": "resolveTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "string",
+                        "name": "result",
+                        "type": "string"
+                    }
+                ],
+                "internalType": "struct ResultData",
+                "name": "resultData",
+                "type": "tuple"
+            },
+            {
+                "internalType": "address",
+                "name": "miner",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "taskId",
+                "type": "uint256"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "prompt",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "promptTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reward",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "confirmTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "resultPicked",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct TaskData",
+                "name": "taskData",
+                "type": "tuple"
+            },
+            {
+                "internalType": "address",
+                "name": "creator",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "uint256",
+                "name": "taskId",
+                "type": "uint256"
+            }
+        ],
+        "name": "getTaskFullData",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "creator",
+                "type": "address"
+            },
+            {
+                "components": [
+                    {
+                        "internalType": "string",
+                        "name": "prompt",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "promptTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "reward",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "confirmTime",
+                        "type": "uint256"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "resultPicked",
+                        "type": "uint256"
+                    }
+                ],
+                "internalType": "struct TaskData",
+                "name": "taskData",
+                "type": "tuple"
+            },
+            {
+                "internalType": "uint256",
+                "name": "resultCount",
+                "type": "uint256"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "resultIds",
+                "type": "uint256[]"
+            },
+            {
+                "internalType": "address[]",
+                "name": "miners",
+                "type": "address[]"
+            },
+            {
+                "internalType": "string[]",
+                "name": "results",
+                "type": "string[]"
+            },
+            {
+                "internalType": "uint256[]",
+                "name": "resolveTimes",
+                "type": "uint256[]"
+            },
+            {
+                "internalType": "uint256",
+                "name": "tokenId",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "owner",
+        "outputs": [
+            {
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "address",
+                "name": "newAdd",
+                "type": "address"
+            }
+        ],
+        "name": "setADN",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
