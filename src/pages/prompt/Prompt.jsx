@@ -30,7 +30,7 @@ const Prompt = () => {
     isError: isPrepareError,
   } = usePrompt({ prompt, reward });
 
-  const { data, error, isError, write } = useContractWrite(config);
+  const { data, error, isLoading: isLoadingWrite, isError, write } = useContractWrite(config);
 
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
@@ -83,7 +83,7 @@ const Prompt = () => {
           </div>
 
           <button disabled={!write || isLoading}>
-            {isLoading ? "Dreaming..." : "Dream"}
+            {isLoadingWrite || isLoading ? "Dreaming..." : "Dream"}
           </button>
 
           

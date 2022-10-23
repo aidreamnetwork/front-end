@@ -23,7 +23,7 @@ const Bid = ({
     error: prepareError,
     isError: isPrepareError,
   } = usePick({ taskId, resultId });
-  const { data, error, isError, write } = useContractWrite(config);
+  const { data, error, isError, isLoading: isLoadingWrite, write } = useContractWrite(config);
 
   const { isLoading, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
@@ -64,7 +64,7 @@ const Bid = ({
           {pickable ? (
             miner ? (
               <button disabled={!write || isLoading} onClick={() => write?.()}>
-                {isLoading ? "Choosing ..." : "Choose"}
+                {isLoading ||isLoadingWrite ? "Choosing ..." : "Choose"}
               </button>
             ) : endtime ? (
               <button> {endtime}</button>

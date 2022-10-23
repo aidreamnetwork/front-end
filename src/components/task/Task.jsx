@@ -34,10 +34,13 @@ const Task = ({ taskId }) => {
   useEvent("PostTask", (address, taskId, resultId) => {
     console.log("New Event", address, taskId?.toNumber(), resultId?.toNumber());
     setTaskIdToLoad(taskId?.toNumber());
+    window.location.reload();
   });
   useEvent("PickResult", (sender, taskId, resultId) => {
     console.log("PickResult", sender, taskId?.toNumber(), resultId?.toNumber());
     setTaskIdToLoad(taskId?.toNumber());
+    window.location.reload();
+
   });
 
   let { data, isError, isLoading } = getTaskFullData(taskIdToLoad);

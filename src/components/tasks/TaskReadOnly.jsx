@@ -32,23 +32,11 @@ const TaskReadOnly = ({ taskId }) => {
 
   let { data, isError, isLoading } = getTaskFullData(taskId);
   let { data: TTL_TASK } = useADNCall("TTL_TASK");
-
-  console.log(data);
-  if (!data) return <></>;
-  let {
-    creator,
-    taskData,
-    resultCount,
-    resultIds,
-    miners,
-    results,
-    resolveTimes,
-    tokenId,
-  } = data;
-  let startTime = new Date(taskData?.promptTime?.toNumber() * 1000);
+  
+  let startTime = new Date(data?.taskData?.promptTime?.toNumber() * 1000);
   // let pickable = new Date() - startTime < TTL_TASK * 1000;
   let endTime = new Date(
-    (taskData?.promptTime?.toNumber() + TTL_TASK?.toNumber()) * 1000
+    (data?.taskData?.promptTime?.toNumber() + TTL_TASK?.toNumber()) * 1000
   );
 
   const [showResult, setshowResult] = useState(false);
@@ -63,25 +51,25 @@ const TaskReadOnly = ({ taskId }) => {
               <b>Prompt [No: {taskId}]</b>
             </div>
             <div className="task-readonly-prompt-content">
-              {taskData.prompt}
+              {data?.taskData?.prompt}
             </div>
 
             <div className="task-readonly-prompt-footer">
               <div>
-                <b>Reward</b> {ethers.utils.formatEther(taskData.reward)} KLAY
+                <b>Reward</b> {ethers.utils.formatEther(data?.taskData?.reward)} KLAY
               </div>
               <div>
                 <b>Prompt time: </b>{" "}
                 {new Date(
-                  taskData.promptTime.toNumber() * 1000
+                  data?.taskData?.promptTime?.toNumber() * 1000
                 ).toLocaleString()}
               </div>
               <div>
                 <b>Time to end: </b>
-                <TimeToEnd date={endTime} />
+                <TimeToEnd date={data?.endTime} />
               </div>
               <div>
-                <b>Total result</b> {resultCount.toNumber()}/4
+                <b>Total result</b> {data?.resultCount?.toNumber()}/4
               </div>
               <div className="task-readonly-buttons">
                 <div
@@ -102,11 +90,11 @@ const TaskReadOnly = ({ taskId }) => {
               <div className="task-readonly-prompt-footer">
                 <div className="task-readonly-result">
                   {Array.from({ length: 4 }, (e, i) => {
-                    if (i < resultCount.toNumber()) {
+                    if (i < data?.resultCount?.toNumber()) {
                       return (
                         <BidReadOnly
                           key={i}
-                          resultId={resultIds[i].toNumber()}
+                          resultId={resultIds[i]?.toNumber()}
                         />
                       );
                     } else {
