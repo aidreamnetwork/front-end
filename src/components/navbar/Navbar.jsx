@@ -10,9 +10,9 @@ const Menu = () => {
   let { address, isConnected } = useAccount();
   return (
     <>
-      <Link to="/tasks">
-        <p>Explore</p>
-      </Link>
+      <a href="https://docs.aidream.network" target="_blank">
+        <p>Docs</p>
+      </a>
       {isConnected ? (
         <>
           <Link to={`/creator/${address}`}>
