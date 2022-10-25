@@ -94,7 +94,7 @@ const TaskReadOnly = ({ taskId }) => {
                       return (
                         <BidReadOnly
                           key={i}
-                          resultId={resultIds[i]?.toNumber()}
+                          resultId={data?.resultIds[i]?.toNumber()}
                         />
                       );
                     } else {

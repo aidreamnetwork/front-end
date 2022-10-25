@@ -22,11 +22,14 @@ const BidNFTCard = ({ tokenId }) => {
   const { data, isError, isLoading } = getResultFullData(resultId);
   console.log(data);
   useEffect(() => {
+    if(resultIdBig){
+      setresultId(resultIdBig?.toNumber());
+    }
     if (data) {
       setIsPicked(data.taskData.resultPicked.toNumber() == resultId);
       setImg(getIPFSLink(data.resultData.result));
     }
-  }, [data, resultId]);
+  }, [data, resultId, resultIdBig]);
   return (
     <div className="card-column">
       {isLoading || isError || isLoadingNFT || isErrorNFT ? (

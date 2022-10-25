@@ -15,7 +15,6 @@ export default function ListBidNFT({ number }) {
   for (var i = to; i >= from; i--) {
     tokenIds.push(i);
   }
-  console.clear();
   console.log("Token ids", tokenIds)
   return (
     <div className="bids section__padding">
