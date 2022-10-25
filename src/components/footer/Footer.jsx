@@ -13,38 +13,25 @@ const Footer = () => {
           <img src={nftlogo} alt="logo" />
           <p>AI Dream Network</p>
         </div>
-        <div>
-          <h3>Get the lastes Updates</h3>
-        </div>
-        <div>
-          <button><a href="mailto:redpanthercode@gmail.com">Email Me!</a></button>
-        </div>
         </div>
         <div className="footer-links_div">
           <h4>AI Dream Network</h4>
-          <p>Explore</p>
-          <p>How it Works</p>
-          <p>Counters</p>
-          <p>Contact Us</p>
+          <p><a href="https://docs.aidream.network" target="_blank">How it Works</a></p>
+          <p><a href="https://github.com/aidreamnetwork/minerapp" target="_blank">Miner App</a></p>
+          <p><a href="https://github.com/aidreamnetwork/contracts" target="_blank">Contracts</a></p>
+          
         </div>
         <div className="footer-links_div">
           <h4>Support</h4>
-          <p>Help center</p>
-          <p>Terms of service</p>
-          <p>Legal</p>
-          <p>Privacy policy</p>
+          <p><a href="mailto:redpanthercode@gmail.com">Email Me</a></p>
+          <p><a target="_blank" href="https://t.me/roshikamedev">Chat With Me</a></p>
         </div>
       </div>
       <div className="footer-copyright">
         <div>
         <p> © {(new Date().getFullYear())} AI Dream Network. All Rights Reserved</p>
         </div>
-        <div>
-          <AiOutlineInstagram size={25} color='white' className='footer-icon' />
-          <AiOutlineTwitter size={25} color='white' className='footer-icon'/>
-          <RiDiscordFill size={25} color='white' className='footer-icon'/>
-          <FaTelegramPlane size={25} color='white'  className='footer-icon' />
-        </div>
+
 
       </div>
     </div>
